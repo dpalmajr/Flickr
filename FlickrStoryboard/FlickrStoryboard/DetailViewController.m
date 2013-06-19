@@ -14,6 +14,12 @@
 
 @implementation DetailViewController
 
+#pragma mark - DetailViewProtocol Methods
+
+@synthesize imageURL;
+
+#pragma mark - UIViewController Methods
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

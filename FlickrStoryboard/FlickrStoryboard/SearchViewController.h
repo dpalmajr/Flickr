@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSearch;
 @property (weak, nonatomic) IBOutlet UITextField *txtSearchField;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+- (IBAction)searchButtonPressed:(id)sender;
 
 @end

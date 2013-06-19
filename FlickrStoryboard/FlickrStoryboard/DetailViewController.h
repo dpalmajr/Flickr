@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AsyncImageView.h"
+#import "DetailViewProtocol.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController<DetailViewProtocol>
+
 @property (weak, nonatomic) IBOutlet AsyncImageView *imgFullSizeImage;
 
 @end

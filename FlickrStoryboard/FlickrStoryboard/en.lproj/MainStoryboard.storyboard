@@ -17,7 +17,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="6e9-AG-WOf" customClass="SearchResultTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flickrResultCell" rowHeight="77" id="6e9-AG-WOf" customClass="SearchResultTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -27,6 +27,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Tcv-TT-W5M" customClass="AsyncImageView">
                                                     <rect key="frame" x="11" y="3" width="80" height="69"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K7m-2g-kWT">
                                                     <rect key="frame" x="99" y="3" width="201" height="37"/>
@@ -54,8 +55,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="2" id="943-6r-5pV"/>
-                                    <outlet property="delegate" destination="2" id="7Me-4Y-tw4"/>
+                                    <outlet property="dataSource" destination="2" id="ynN-Wy-YGu"/>
+                                    <outlet property="delegate" destination="2" id="tMu-Ug-rA8"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ena-IO-hLQ">
@@ -69,6 +70,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="2" eventType="touchUpInside" id="2vM-ID-Aj7"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Ai1-m6-n1r">
                                 <rect key="frame" x="20" y="14" width="214" height="30"/>

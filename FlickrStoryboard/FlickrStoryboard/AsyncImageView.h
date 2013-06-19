@@ -10,4 +10,6 @@
 
 @interface AsyncImageView : UIImageView
 
+@property(nonatomic) NSString *imageUrl;
+
 @end

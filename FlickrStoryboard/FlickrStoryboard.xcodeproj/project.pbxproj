@@ -53,6 +53,7 @@
 		A75166EE17723DAC00E86218 /* FlickrSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrSearchService.h; sourceTree = "<group>"; };
 		A75166EF17723DAC00E86218 /* FlickrSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchService.m; sourceTree = "<group>"; };
 		A75166F217724FB100E86218 /* FlickrConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrConstants.h; sourceTree = "<group>"; };
+		A75166F3177269AD00E86218 /* DetailViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +112,7 @@
 				6D856A4D177166C500E90FC0 /* SearchViewController.m */,
 				6D856A5A17716A6F00E90FC0 /* DetailViewController.h */,
 				6D856A5B17716A6F00E90FC0 /* DetailViewController.m */,
+				A75166F3177269AD00E86218 /* DetailViewProtocol.h */,
 			);
 			path = FlickrStoryboard;
 			sourceTree = "<group>";

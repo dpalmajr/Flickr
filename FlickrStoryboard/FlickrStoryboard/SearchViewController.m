@@ -7,12 +7,21 @@
 //
 
 #import "SearchViewController.h"
+#import "FlickrSearchService.h"
+#import "DetailViewProtocol.h"
+#import "FlickrResult.h"
+#import "SearchResultTableViewCell.h"
 
 @interface SearchViewController ()
+
+@property(nonatomic, strong) NSArray *dataItems;
+@property(nonatomic) NSInteger selectedIndex;
 
 @end
 
 @implementation SearchViewController
+
+#pragma mark - UIViewController Methods
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,21 +44,61 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    id<DetailViewProtocol> destinationViewController = (id<DetailViewProtocol>)[segue destinationViewController];
+    FlickrResult *model = [self.dataItems objectAtIndex:self.selectedIndex];
+    
+    destinationViewController.imageURL = model.fullSizeUrl;
+}
 
 #pragma mark - UITableViewDataSource Methods
 
-- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+- (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+   SearchResultTableViewCell *cell =  [self.tableView dequeueReusableCellWithIdentifier:@"flickrResultCell"];
+    FlickrResult *model = [self.dataItems objectAtIndex:indexPath.row];
+    cell.lblTitle.text = model.title;
+    cell.imgThumbnail.imageUrl = model.thumbnailUrl;
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
-}
-
-#pragma mark - UITableViewDelegate Method
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (!self.dataItems)
+        return 0;
     
+    return self.dataItems.count;
 }
 
+#pragma mark - UITableViewDelegate Methods
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedIndex = indexPath.row;
+}
+
+- (IBAction)searchButtonPressed:(id)sender {
+    [[FlickrSearchService instance]performSearchWithQuery:@"audi"
+                                                onSuccess:^(NSArray *resultData){
+                                                    
+                                                    self.dataItems = resultData;
+                                                    
+                                                    [self performSelectorOnMainThread:@selector(reloadTableView) withObject:nil waitUntilDone:NO];
+                                                }
+                                                onFailure:^(NSError *error){
+                                                    [self performSelectorOnMainThread:@selector(displayErrorMessage) withObject:nil waitUntilDone:NO];
+                                                    NSLog(@"%@", [error description]);
+                                                }];
+}
+
+#pragma  mark - Private Methods
+
+-(void) reloadTableView{
+    [self.tableView reloadData];
+}
+
+-(void)displayErrorMessage{
+
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Oops!" message:@"Something went wrong while trying to get search results :(" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    
+    [alertView show];
+}
 @end

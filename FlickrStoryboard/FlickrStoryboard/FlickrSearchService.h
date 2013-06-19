@@ -10,4 +10,11 @@
 
 @interface FlickrSearchService : NSObject
 
++(FlickrSearchService *)instance;
+
+-(void)performSearchWithQuery:(NSString *)query onSuccess:(void(^)(NSArray *flickrPhotos))successCallback onFailure:(void(^)(NSError *error))errorCallback;
+
+
+-(NSDictionary *)performSearchWithQuery:(NSString *)query;
+
 @end
