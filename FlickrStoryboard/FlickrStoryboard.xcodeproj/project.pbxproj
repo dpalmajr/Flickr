@@ -22,6 +22,7 @@
 		6D856A55177167E100E90FC0 /* SearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A54177167E100E90FC0 /* SearchResultTableViewCell.m */; };
 		6D856A591771686F00E90FC0 /* FlickrResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A581771686F00E90FC0 /* FlickrResult.m */; };
 		6D856A5C17716A6F00E90FC0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A5B17716A6F00E90FC0 /* DetailViewController.m */; };
+		A75166F017723DAC00E86218 /* FlickrSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = A75166EF17723DAC00E86218 /* FlickrSearchService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,9 @@
 		6D856A581771686F00E90FC0 /* FlickrResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrResult.m; sourceTree = "<group>"; };
 		6D856A5A17716A6F00E90FC0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6D856A5B17716A6F00E90FC0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		A75166EE17723DAC00E86218 /* FlickrSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrSearchService.h; sourceTree = "<group>"; };
+		A75166EF17723DAC00E86218 /* FlickrSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrSearchService.m; sourceTree = "<group>"; };
+		A75166F217724FB100E86218 /* FlickrConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrConstants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		6D856A00177163FA00E90FC0 /* FlickrStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				A75166F117724F9000E86218 /* Constants */,
+				A75166ED17723D9000E86218 /* Services */,
 				6D856A561771685E00E90FC0 /* Models */,
 				6D856A4F1771671300E90FC0 /* Views */,
 				6D856A09177163FA00E90FC0 /* AppDelegate.h */,
@@ -141,6 +147,23 @@
 				6D856A581771686F00E90FC0 /* FlickrResult.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A75166ED17723D9000E86218 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A75166EE17723DAC00E86218 /* FlickrSearchService.h */,
+				A75166EF17723DAC00E86218 /* FlickrSearchService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		A75166F117724F9000E86218 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A75166F217724FB100E86218 /* FlickrConstants.h */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +239,7 @@
 				6D856A55177167E100E90FC0 /* SearchResultTableViewCell.m in Sources */,
 				6D856A591771686F00E90FC0 /* FlickrResult.m in Sources */,
 				6D856A5C17716A6F00E90FC0 /* DetailViewController.m in Sources */,
+				A75166F017723DAC00E86218 /* FlickrSearchService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +362,7 @@
 				6D856A1C177163FA00E90FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

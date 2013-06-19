@@ -37,6 +37,7 @@
 
 
 #pragma mark - UITableViewDataSource Methods
+
 - (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     return nil;
 }
@@ -46,6 +47,7 @@
 }
 
 #pragma mark - UITableViewDelegate Method
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
