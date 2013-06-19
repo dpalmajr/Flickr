@@ -35,4 +35,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - UITableViewDataSource Methods
+- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
+
+- (NSInteger)numberOfSections{
+    return 0;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 0;
+}
+
+#pragma mark - UITableViewDelegate Method
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
 @end
