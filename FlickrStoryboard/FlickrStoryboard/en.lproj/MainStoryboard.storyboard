@@ -17,14 +17,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="6e9-AG-WOf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="6e9-AG-WOf" customClass="SearchResultTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Tcv-TT-W5M">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Tcv-TT-W5M" customClass="AsyncImageView">
                                                     <rect key="frame" x="11" y="3" width="80" height="69"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -45,6 +45,11 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="imgThumbnail" destination="Tcv-TT-W5M" id="YRS-zL-9Pf"/>
+                                            <outlet property="lblSubTitle" destination="FwG-9m-cUb" id="eLr-Ri-LI6"/>
+                                            <outlet property="lblTitle" destination="K7m-2g-kWT" id="sym-00-Oi2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -87,6 +92,17 @@
         </scene>
     </scenes>
     <classes>
+        <class className="AsyncImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AsyncImageView.h"/>
+        </class>
+        <class className="SearchResultTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imgThumbnail" candidateClass="AsyncImageView"/>
+                <relationship kind="outlet" name="lblSubTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="SearchViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
             <relationships>
