@@ -33,6 +33,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.imgFullSizeImage.imageUrl = self.imageURL;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning

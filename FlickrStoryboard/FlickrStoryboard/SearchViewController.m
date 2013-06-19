@@ -73,10 +73,15 @@
 #pragma mark - UITableViewDelegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedIndex = indexPath.row;
+    
+    //make sure selections to not persist
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
 - (IBAction)searchButtonPressed:(id)sender {
-    [[FlickrSearchService instance]performSearchWithQuery:@"audi"
+    [[FlickrSearchService instance]performSearchWithQuery:@"rs4"
                                                 onSuccess:^(NSArray *resultData){
                                                     
                                                     self.dataItems = resultData;

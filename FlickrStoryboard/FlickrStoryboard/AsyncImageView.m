@@ -31,7 +31,8 @@ static NSOperationQueue *operationQueue;
     dispatch_once(&onceToken, ^{
         operationQueue = [[NSOperationQueue alloc]init];
     });
-
+    self.contentMode = UIViewContentModeScaleAspectFit;
+    self.backgroundColor = [UIColor blackColor];
     return self;
 }
 
@@ -58,7 +59,7 @@ static NSOperationQueue *operationQueue;
         _activityIndicatorView  = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
         [_activityIndicatorView setCenter:CGPointMake(self.bounds.size.width/2,self.bounds.size.height/2)];
         
-        [_activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+        [_activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
     }
     //make sure you are not adding the same subview twice
     [_activityIndicatorView removeFromSuperview];
