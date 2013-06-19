@@ -21,6 +21,7 @@
 		6D856A52177167C900E90FC0 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A51177167C900E90FC0 /* AsyncImageView.m */; };
 		6D856A55177167E100E90FC0 /* SearchResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A54177167E100E90FC0 /* SearchResultTableViewCell.m */; };
 		6D856A591771686F00E90FC0 /* FlickrResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A581771686F00E90FC0 /* FlickrResult.m */; };
+		6D856A5C17716A6F00E90FC0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D856A5B17716A6F00E90FC0 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		6D856A54177167E100E90FC0 /* SearchResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultTableViewCell.m; sourceTree = "<group>"; };
 		6D856A571771686F00E90FC0 /* FlickrResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrResult.h; sourceTree = "<group>"; };
 		6D856A581771686F00E90FC0 /* FlickrResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrResult.m; sourceTree = "<group>"; };
+		6D856A5A17716A6F00E90FC0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		6D856A5B17716A6F00E90FC0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				6D856A01177163FA00E90FC0 /* Supporting Files */,
 				6D856A4C177166C500E90FC0 /* SearchViewController.h */,
 				6D856A4D177166C500E90FC0 /* SearchViewController.m */,
+				6D856A5A17716A6F00E90FC0 /* DetailViewController.h */,
+				6D856A5B17716A6F00E90FC0 /* DetailViewController.m */,
 			);
 			path = FlickrStoryboard;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				6D856A52177167C900E90FC0 /* AsyncImageView.m in Sources */,
 				6D856A55177167E100E90FC0 /* SearchResultTableViewCell.m in Sources */,
 				6D856A591771686F00E90FC0 /* FlickrResult.m in Sources */,
+				6D856A5C17716A6F00E90FC0 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
