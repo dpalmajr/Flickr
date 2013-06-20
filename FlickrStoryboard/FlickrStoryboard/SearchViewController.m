@@ -55,6 +55,7 @@
 #pragma mark - UITableViewDataSource Methods
 
 - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
    SearchResultTableViewCell *cell =  [self.tableView dequeueReusableCellWithIdentifier:@"flickrResultCell"];
     cell.imgThumbnail.image = nil;
     FlickrResult *model = [self.dataItems objectAtIndex:indexPath.row];
