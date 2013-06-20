@@ -71,7 +71,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="2" id="mHM-xX-hgM"/>
+                                    <outlet property="delegate" destination="2" id="yfa-Ec-n8e"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -132,6 +132,34 @@
             <point key="canvasLocation" x="-306" y="110"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AsyncImageView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AsyncImageView.h"/>
+        </class>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imgFullSizeImage" candidateClass="AsyncImageView"/>
+            </relationships>
+        </class>
+        <class className="SearchResultTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imgThumbnail" candidateClass="AsyncImageView"/>
+                <relationship kind="outlet" name="lblSubTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lblTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SearchViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="searchButtonPressed:"/>
+                <relationship kind="outlet" name="btnSearch" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="txtSearchField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

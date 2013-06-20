@@ -56,6 +56,7 @@
 
 - (UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
    SearchResultTableViewCell *cell =  [self.tableView dequeueReusableCellWithIdentifier:@"flickrResultCell"];
+    cell.imgThumbnail.image = nil;
     FlickrResult *model = [self.dataItems objectAtIndex:indexPath.row];
     cell.lblTitle.text = model.title;
     cell.imgThumbnail.imageUrl = model.thumbnailUrl;
@@ -72,6 +73,8 @@
 
 #pragma mark - UITableViewDelegate Methods
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.view endEditing:YES];
+    
     self.selectedIndex = indexPath.row;
     
     //make sure selections to not persist
@@ -80,8 +83,28 @@
     [self performSegueWithIdentifier:@"pushDetailView" sender:self];
 }
 
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField endEditing:YES];
+    return YES;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self searchButtonPressed:nil];
+    return;
+}
+
 - (IBAction)searchButtonPressed:(id)sender {
-    [[FlickrSearchService instance]performSearchWithQuery:@"rs4"
+    NSString *searchText = self.txtSearchField.text;
+    searchText = [searchText stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    [self.view endEditing:YES];
+    
+    [[FlickrSearchService instance]performSearchWithQuery:searchText
                                                 onSuccess:^(NSArray *resultData){
                                                     
                                                     self.dataItems = resultData;
