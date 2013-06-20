@@ -12,8 +12,16 @@
 
 +(FlickrSearchService *)instance;
 
+/*
+ Performs an asynchronous flickr photo search with the search criteria provided.
+ */
+
 -(void)performSearchWithQuery:(NSString *)query onSuccess:(void(^)(NSArray *flickrPhotos))successCallback onFailure:(void(^)(NSError *error))errorCallback;
 
+
+/*
+ Performs a synchronous flickr photos search with the search criteria provides
+ */
 
 -(NSDictionary *)performSearchWithQuery:(NSString *)query;
 
